@@ -42,8 +42,8 @@ public abstract class Mover : MonoBehaviour {
 	}
 
 	void SetTransform() {
-		float angle = Mathf.Atan2 (heading.y, heading.x);
-		Quaternion rotation = Quaternion.AngleAxis (angle, Vector3.up);
+		float angle = Mathf.Atan2 (heading.y, heading.x) * Mathf.Rad2Deg;
+		Quaternion rotation = Quaternion.AngleAxis (angle, Vector3.forward);
 
 		this.transform.SetPositionAndRotation (position, rotation);
 	}
